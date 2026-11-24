@@ -1,0 +1,10 @@
+target/surefire-reports/org.springframework.samples.petclinic.model.ValidatorTests.txt
+target/surefire-reports/org.springframework.samples.petclinic.owner.OwnerControllerTests.txt
+target/surefire-reports/org.springframework.samples.petclinic.owner.PetControllerTests.txt
+target/surefire-reports/org.springframework.samples.petclinic.owner.PetTypeFormatterTests.txt
+target/surefire-reports/org.springframework.samples.petclinic.owner.VisitControllerTests.txt
+target/surefire-reports/org.springframework.samples.petclinic.service.ClinicServiceTests.txt
+target/surefire-reports/org.springframework.samples.petclinic.system.CrashControllerTests.txt
+target/surefire-reports/org.springframework.samples.petclinic.system.ProductionConfigurationTests.txt
+target/surefire-reports/org.springframework.samples.petclinic.vet.VetControllerTests.txt
+target/surefire-reports/org.springframework.samples.petclinic.vet.VetTests.txt
