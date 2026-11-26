@@ -15,7 +15,7 @@
  */
 package org.springframework.samples.petclinic.vet;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -33,7 +33,6 @@ class VetController {
 
     private final VetRepository vets;
 
-    @Autowired
     public VetController(VetRepository clinicService) {
         this.vets = clinicService;
     }
@@ -48,8 +47,19 @@ class VetController {
         return "vets/vetList";
     }
 
-    @GetMapping({ "/vets.json", "/vets.xml" })
-    public @ResponseBody Vets showResourcesVetList() {
+    @GetMapping(value = "/vets.json", produces = "application/json;charset=UTF-8")
+    public @ResponseBody Vets showResourcesVetListJson() {
+        return showResourcesVetList();
+    }
+
+    @GetMapping(value = "/vets.xml", produces = MediaType.APPLICATION_XML_VALUE)
+    public @ResponseBody Vets showResourcesVetListXml() {
+        return showResourcesVetList();
+    }
+
+    // Spring 6 no longer selects the response format from the path extension, so each
+    // endpoint declares the type it used to return under Spring Boot 1.5.
+    private Vets showResourcesVetList() {
         // Here we are returning an object of type 'Vets' rather than a collection of Vet
         // objects so it is simpler for JSon/Object mapping
         Vets vets = new Vets();
